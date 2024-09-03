@@ -1,4 +1,4 @@
--- Copyright © 2023 Calin Don. All Rights Reserved.
+-- Copyright © 2024 Calin Don. All Rights Reserved.
 
 -- lua port of the selenized color scheme
 -- see: https://github.com/jan-warchol/selenized
@@ -118,6 +118,7 @@ local highlights = function(colors)
 
     hi['IncSearch']                    = { fg = colors.orange, bg = none, reverse = true }
     hi['Search']                       = { fg = colors.yellow, bg = none, reverse = true }
+    hi['CurSearch']                    = { fg = colors.br_yellow, bg = none, reverse = true }
     hi['QuickFixLine']                 = 'Search'
     hi['Visual']                       = { fg = none, bg = colors.bg_1 }
     hi['MatchParen']                   = { fg = colors.br_yellow, bg = colors.bg_2, bold = true }
@@ -157,6 +158,7 @@ local highlights = function(colors)
     hi['Boolean']                      = 'Constant'
     hi['Character']                    = 'Constant'
     hi['Float']                        = 'Constant'
+    hi['SpecialChar']                  = { fg = colors.violet, bg = none }
     hi['Identifier']                   = { fg = colors.br_blue, bg = none }
     hi['Function']                     = 'Identifier'
     hi['Statement']                    = { fg = colors.br_yellow, bg = none }
@@ -176,7 +178,6 @@ local highlights = function(colors)
     hi['StorageClass']                 = 'Type'
     hi['Structure']                    = 'Type'
     hi['Special']                      = { fg = colors.red, bg = none }
-    hi['SpecialChar']                  = 'Special'
     hi['Delimiter']                    = 'Special'
     hi['SpecialComment']               = 'Special'
     hi['Debug']                        = 'Special'
@@ -214,7 +215,10 @@ local highlights = function(colors)
     hi['WinBar']                       = { fg = colors.dim_0, bg = colors.bg_0 }
 
     hi['Suggestion']                   = { fg = colors.dim_1, bg = none, italic = true }
+    hi['SnippetTabstop']               = { fg = none, bg = colors.bg_1, italic = true }
 
+    -- snippy nvim
+    hi['SnippyPlaceholder']            = 'SnippetTabstop'
     -- vim Copilot
     hi['CopilotSuggestion']            = 'Suggestion'
 
@@ -273,19 +277,19 @@ local highlights = function(colors)
     hi['WinSeparator']                 = { fg = colors.bg_2, bg = none, bold = true }
 
     -- Identifiers
-    hi['@variable']                    = 'Identifier'            -- various variable names
-    hi['@variable.builtin']            = 'Special'               -- built-in variable names (e.g. `this`)
-    hi['@variable.parameter']          = { fg = colors.magenta } -- parameters of a function
-    hi['@variable.parameter.builtin']  = 'Special'               -- special parameters (e.g. `_`, `it`)
-    hi['@variable.member']             = 'Identifier'            -- object and struct fields
+    hi['@variable']                    = 'Identifier' -- various variable names
+    hi['@variable.builtin']            = 'Special'    -- built-in variable names (e.g. `this`)
+    hi['@variable.parameter']          = 'Identifier' -- parameters of a function
+    hi['@variable.parameter.builtin']  = 'Special'    -- special parameters (e.g. `_`, `it`)
+    hi['@variable.member']             = 'Identifier' -- object and struct fields
 
-    hi['@constant']                    = 'Constant'              -- constant identifiers
-    hi['@constant.builtin']            = 'Special'               -- built-in constant values
-    hi['@constant.macro']              = 'Define'                -- constants defined by the preprocessor
+    hi['@constant']                    = 'Constant'   -- constant identifiers
+    hi['@constant.builtin']            = 'Special'    -- built-in constant values
+    hi['@constant.macro']              = 'Define'     -- constants defined by the preprocessor
 
-    hi['@module']                      = 'Identifier'            -- modules or namespaces
-    hi['@module.builtin']              = 'Special'               -- built-in modules or namespaces
-    hi['@label']                       = 'Label'                 -- GOTO and other labels (e.g. `label:` in C), including heredoc labels
+    hi['@module']                      = 'Identifier' -- modules or namespaces
+    hi['@module.builtin']              = 'Special'    -- built-in modules or namespaces
+    hi['@label']                       = 'Label'      -- GOTO and other labels (e.g. `label:` in C), including heredoc labels
 
     -- Literals
     hi['@string']                      = 'String'      -- string literals
@@ -328,14 +332,13 @@ local highlights = function(colors)
     -- Keywords
     hi['@keyword']                     = 'Keyword'     -- keywords not fitting into specific categories
     hi['@keyword.coroutine']           = 'Special'     -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
-    hi['@keyword.function']            = 'Statement'   -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+    hi['@keyword.function']            = 'Keyword'     -- keywords that define a function (e.g. `func` in Go, `def` in Python)
     hi['@keyword.operator']            = 'Operator'    -- operators that are English words (e.g. `and` / `or`)
-    hi['@keyword.import']              =
-    'Include'                                          -- keywords for including or exporting modules (e.g. `import` / `from` in Python)
-    hi['@keyword.type']                = 'TypeDef'     -- keywords describing namespaces and composite types (e.g. `struct`, `enum`)
+    hi['@keyword.import']              = 'Include'     -- keywords for including or exporting modules (e.g. `import` in Python)
+    hi['@keyword.type']                = 'Keyword'     -- keywords describing namespaces and composite types (e.g. `struct`, `enum`)
     hi['@keyword.modifier']            = 'Keyword'     -- keywords modifying other constructs (e.g. `const`, `static`, `public`)
     hi['@keyword.repeat']              = 'Repeat'      -- keywords related to loops (e.g. `for` / `while`)
-    hi['@keyword.return']              = 'Keyword'     -- keywords like `return` and `yield`
+    hi['@keyword.return']              = 'Statement'   -- keywords like `return` and `yield`
     hi['@keyword.debug']               = 'Debug'       -- keywords related to debugging
     hi['@keyword.exception']           = 'Exception'   -- keywords related to exceptions (e.g. `throw` / `catch`)
 
@@ -344,6 +347,8 @@ local highlights = function(colors)
 
     hi['@keyword.directive']           = 'Define'      -- various preprocessor directives & shebangs
     hi['@keyword.directive.define']    = 'Define'      -- preprocessor definition directives
+
+    hi['@keyword.luadoc']              = { bold = false, nocombine = true }
 
     -- Punctuation
     hi['@punctuation.delimiter']       = 'Delimiter' -- delimiters (e.g. `;` / `.` / `,`)
@@ -379,9 +384,12 @@ local highlights = function(colors)
     hi['@markup.underline']            = 'Underlined'
 
     -- LSP semantic tokens
-    hi['@lsp.type.comment']            = {}        -- reset since it interferes with the `@comment` group
-    hi['@lsp.mod.defaultLibrary']      = 'Special' -- default library symbols
-    hi['@lsp.mod.globalScope']         = 'Special' -- global scope symbols
+    hi['@lsp.type.comment']            = {}              -- reset since it interferes with the `@comment` group
+    hi['@lsp.mod.defaultLibrary']      = 'Special'       -- default library symbols
+    hi['@lsp.mod.globalScope']         = { bold = true } -- global scope symbols
+    hi['@lsp.mod.global']              = { bold = true } -- global scope symbols
+
+    hi['@lsp.mod.documentation.lua']   = '@keyword.luadoc'
 
     -- hi['@lsp.type.class']             = 'Structure'
     -- hi['@lsp.type.decorator']         = 'Function'
