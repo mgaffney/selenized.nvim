@@ -17,8 +17,8 @@ local none = 'none'
 local colors = {
 	dark = {
 		bg_0       = '#103c48',
-		bg_1       = '#174956',
-		bg_2       = '#325b66',
+		bg_1       = '#184956',
+		bg_2       = '#2d5b69',
 		dim_0      = '#72898f',
 		fg_0       = '#adbcbc',
 		fg_1       = '#cad8d9',
@@ -130,15 +130,15 @@ local highlights = function(colors)
 	hi['Folded']                       = { fg = none, bg = colors.bg_1 }
 	hi['ColorColumn']                  = { fg = none, bg = colors.bg_2 }
 	hi['LineNr']                       = { fg = colors.dim_0, bg = colors.bg_1 }
-	hi['CursorLineNr']                 = { fg = colors.fg_1, bg = colors.bg_1 }
+	hi['CursorLineNr']                 = { fg = colors.fg_1, bg = none }
 	hi['WinSeparator']                 = { fg = colors.dim_0, bg = colors.dim_0 }
 	hi['StatusLine']                   = { fg = none, bg = colors.bg_1 }
 	hi['StatusLineNC']                 = { fg = none, bg = colors.bg_2 }
 	hi['StatusLineTerm']               = 'StatusLine'
 	hi['StatusLineTermNC']             = 'StatusLineNC'
-	hi['TabLineSel']                   = { fg = colors.fg_1, bg = colors.bg_2 }
-	hi['TabLine']                      = { fg = colors.fg_0, bg = colors.bg_1 }
-	hi['TabLineFill']                  = { fg = colors.fg_0, bg = colors.bg_1 }
+	hi['TabLineSel']                   = { fg = colors.fg_1, bg = colors.bg_1, bold = true, reverse = true }
+	hi['TabLine']                      = { fg = colors.dim_0, bg = none, reverse = true }
+	hi['TabLineFill']                  = { fg = colors.dim_0, bg = none, reverse = true }
 	hi['ToolbarButton']                = { fg = none, bg = none, reverse = true }
 	hi['ToolbarLine']                  = { fg = none, bg = colors.bg_2 }
 	hi['Pmenu']                        = { fg = colors.dim_0, bg = colors.bg_1 }
