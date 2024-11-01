@@ -195,12 +195,12 @@ local highlights = function(colors)
 	hi['Directory']                    = { fg = none, bg = none }
 	hi['EndOfBuffer']                  = { fg = none, bg = none }
 	hi['ErrorMsg']                     = { fg = none, bg = none }
-	hi['FoldColumn']                   = { fg = none, bg = colors.bg_1 }
+	hi['FoldColumn']                   = { fg = none, bg = none }
 	hi['ModeMsg']                      = { fg = none, bg = none }
 	hi['MoreMsg']                      = { fg = none, bg = none }
 	hi['NonText']                      = { fg = none, bg = none }
 	hi['Question']                     = { fg = none, bg = none }
-	hi['SignColumn']                   = { fg = none, bg = colors.bg_1 }
+	hi['SignColumn']                   = { fg = none, bg = none }
 	hi['SpecialKey']                   = { fg = none, bg = none }
 	hi['SpellBad']                     = { fg = none, bg = none, sp = colors.red, undercurl = true }
 	hi['SpellCap']                     = { fg = none, bg = none, sp = colors.red, undercurl = true }
