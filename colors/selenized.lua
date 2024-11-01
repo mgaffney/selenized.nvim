@@ -22,8 +22,8 @@ local colors = {
 		dim_0      = '#72898f',
 		fg_0       = '#adbcbc',
 		fg_1       = '#cad8d9',
-		bg_15      = '#14404b',     -- bg_1 12% darker for subtle highlighting of embedded, selectable blocks
-		dim_1      = '#90998f',     -- yellowish dim_0 for things like autocomplete previews
+		bg_15      = '#14404b', -- bg_1 12% darker for subtle highlighting of embedded, selectable blocks
+		dim_1      = '#90998f', -- yellowish dim_0 for things like autocomplete previews
 		red        = '#fa5750',
 		green      = '#75b938',
 		yellow     = '#dbb32d',
@@ -48,8 +48,8 @@ local colors = {
 		dim_0      = '#909995',
 		fg_0       = '#53676d',
 		fg_1       = '#3a4d53',
-		dim_1      = '#909995',     -- TODO: yellowish dim_0 for things like autocomplete previews
-		bg_15      = '#e9e4d0',     -- TODO: bg_1 12% darker for subtle highlighting of embedded, selectable blocks
+		dim_1      = '#909995', -- TODO: yellowish dim_0 for things like autocomplete previews
+		bg_15      = '#e9e4d0', -- TODO: bg_1 12% darker for subtle highlighting of embedded, selectable blocks
 		red        = '#d2212d',
 		green      = '#489100',
 		yellow     = '#ad8900',
@@ -185,7 +185,7 @@ local highlights = function(colors)
 	hi['Tag']                          = 'Special'
 	hi['Error']                        = { fg = colors.red, bg = none, bold = true }
 	hi['Todo']                         = { fg = colors.magenta, bg = none, bold = true }
-	hi['Underlined']                   = { fg = colors.violet, bg = none, underline = true }
+	hi['Underlined']                   = { fg = colors.br_violet, bg = none, underline = true }
 	hi['Ignore']                       = { fg = colors.bg_2, bg = none }
 	hi['VimCommand']                   = { fg = colors.yellow, bg = none }
 	hi['RubyDefine']                   = { fg = colors.fg_1, bg = none, bold = true }
@@ -278,104 +278,104 @@ local highlights = function(colors)
 	hi['WinSeparator']                 = { fg = colors.bg_2, bg = none, bold = true }
 
 	-- Identifiers
-	hi['@variable']                    = 'Identifier'   -- various variable names
-	hi['@variable.builtin']            = 'Special'      -- built-in variable names (e.g. `this`)
-	hi['@variable.parameter']          = 'Identifier'   -- parameters of a function
-	hi['@variable.parameter.builtin']  = 'Special'      -- special parameters (e.g. `_`, `it`)
-	hi['@variable.member']             = 'Identifier'   -- object and struct fields
+	hi['@variable']                    = 'Identifier' -- various variable names
+	hi['@variable.builtin']            = 'Special'   -- built-in variable names (e.g. `this`)
+	hi['@variable.parameter']          = 'Identifier' -- parameters of a function
+	hi['@variable.parameter.builtin']  = 'Special'   -- special parameters (e.g. `_`, `it`)
+	hi['@variable.member']             = 'Identifier' -- object and struct fields
 
-	hi['@constant']                    = 'Constant'     -- constant identifiers
-	hi['@constant.builtin']            = 'Special'      -- built-in constant values
-	hi['@constant.macro']              = 'Define'       -- constants defined by the preprocessor
+	hi['@constant']                    = 'Constant'  -- constant identifiers
+	hi['@constant.builtin']            = 'Special'   -- built-in constant values
+	hi['@constant.macro']              = 'Define'    -- constants defined by the preprocessor
 
-	hi['@module']                      = 'Identifier'   -- modules or namespaces
-	hi['@module.builtin']              = 'Special'      -- built-in modules or namespaces
-	hi['@label']                       = 'Label'        -- GOTO and other labels (e.g. `label:` in C), including heredoc labels
+	hi['@module']                      = 'Identifier' -- modules or namespaces
+	hi['@module.builtin']              = 'Special'   -- built-in modules or namespaces
+	hi['@label']                       = 'Label'     -- GOTO and other labels (e.g. `label:` in C), including heredoc labels
 
 	-- Literals
-	hi['@string']                      = 'String'        -- string literals
-	hi['@string.documentation']        = 'Comment'       -- string documenting code (e.g. Python docstrings)
-	hi['@string.regexp']               = 'SpecialChar'   -- regular expressions
-	hi['@string.escape']               = 'SpecialChar'   -- escape sequences
-	hi['@string.special']              = 'SpecialChar'   -- other special strings (e.g. dates)
-	hi['@string.special.symbol']       = 'SpecialChar'   -- symbols or atoms
-	hi['@string.special.url']          = 'Underlined'    -- URIs (e.g. hyperlinks)
-	hi['@string.special.path']         = 'Underlined'    -- filenames
+	hi['@string']                      = 'String'     -- string literals
+	hi['@string.documentation']        = 'Comment'    -- string documenting code (e.g. Python docstrings)
+	hi['@string.regexp']               = 'SpecialChar' -- regular expressions
+	hi['@string.escape']               = 'SpecialChar' -- escape sequences
+	hi['@string.special']              = 'SpecialChar' -- other special strings (e.g. dates)
+	hi['@string.special.symbol']       = 'SpecialChar' -- symbols or atoms
+	hi['@string.special.url']          = 'Underlined' -- URIs (e.g. hyperlinks)
+	hi['@string.special.path']         = 'Underlined' -- filenames
 
-	hi['@character']                   = 'Character'     -- character literals
-	hi['@character.special']           = 'SpecialChar'   -- special characters (e.g. wildcards)
+	hi['@character']                   = 'Character'  -- character literals
+	hi['@character.special']           = 'SpecialChar' -- special characters (e.g. wildcards)
 
-	hi['@boolean']                     = 'Boolean'       -- boolean literals
-	hi['@number']                      = 'Number'        -- numeric literals
-	hi['@number.float']                = 'Float'         -- floating-point number literals
+	hi['@boolean']                     = 'Boolean'    -- boolean literals
+	hi['@number']                      = 'Number'     -- numeric literals
+	hi['@number.float']                = 'Float'      -- floating-point number literals
 
 	-- Types
-	hi['@type']                        = 'Type'         -- type or class definitions and annotations
-	hi['@type.builtin']                = 'Special'      -- built-in types
-	hi['@type.definition']             = 'TypeDef'      -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+	hi['@type']                        = 'Type'      -- type or class definitions and annotations
+	hi['@type.builtin']                = 'Special'   -- built-in types
+	hi['@type.definition']             = 'TypeDef'   -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
 
-	hi['@attribute']                   = 'Macro'        -- attribute annotations (e.g. Python decorators, Rust lifetimes)
-	hi['@attribute.builtin']           = 'Special'      -- builtin annotations (e.g. `@property` in Python)
-	hi['@property']                    = 'Identifier'   -- the key in key/value pairs
+	hi['@attribute']                   = 'Macro'     -- attribute annotations (e.g. Python decorators, Rust lifetimes)
+	hi['@attribute.builtin']           = 'Special'   -- builtin annotations (e.g. `@property` in Python)
+	hi['@property']                    = 'Identifier' -- the key in key/value pairs
 
 	-- Functions
-	hi['@function']                    = 'Function'   -- function definitions
-	hi['@function.builtin']            = 'Special'    -- built-in functions
-	hi['@function.call']               = 'Function'   -- function calls
-	hi['@function.macro']              = 'Macro'      -- preprocessor macros
+	hi['@function']                    = 'Function' -- function definitions
+	hi['@function.builtin']            = 'Special' -- built-in functions
+	hi['@function.call']               = 'Function' -- function calls
+	hi['@function.macro']              = 'Macro'   -- preprocessor macros
 
-	hi['@function.method']             = 'Function'   -- method definitions
-	hi['@function.method.call']        = 'Function'   -- method calls
+	hi['@function.method']             = 'Function' -- method definitions
+	hi['@function.method.call']        = 'Function' -- method calls
 
-	hi['@constructor']                 = 'Special'    -- constructor calls and definitions
-	hi['@operator']                    = 'Operator'   -- symbolic operators (e.g. `+` / `*`)
+	hi['@constructor']                 = 'Special' -- constructor calls and definitions
+	hi['@operator']                    = 'Operator' -- symbolic operators (e.g. `+` / `*`)
 
 	-- Keywords
-	hi['@keyword']                     = 'Keyword'       -- keywords not fitting into specific categories
-	hi['@keyword.coroutine']           = 'Special'       -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
-	hi['@keyword.function']            = 'Keyword'       -- keywords that define a function (e.g. `func` in Go, `def` in Python)
-	hi['@keyword.operator']            = 'Operator'      -- operators that are English words (e.g. `and` / `or`)
-	hi['@keyword.import']              = 'Include'       -- keywords for including or exporting modules (e.g. `import` in Python)
-	hi['@keyword.type']                = 'Keyword'       -- keywords describing namespaces and composite types (e.g. `struct`, `enum`)
-	hi['@keyword.modifier']            = 'Keyword'       -- keywords modifying other constructs (e.g. `const`, `static`, `public`)
-	hi['@keyword.repeat']              = 'Repeat'        -- keywords related to loops (e.g. `for` / `while`)
-	hi['@keyword.return']              = 'Statement'     -- keywords like `return` and `yield`
-	hi['@keyword.debug']               = 'Debug'         -- keywords related to debugging
-	hi['@keyword.exception']           = 'Exception'     -- keywords related to exceptions (e.g. `throw` / `catch`)
+	hi['@keyword']                     = 'Keyword'    -- keywords not fitting into specific categories
+	hi['@keyword.coroutine']           = 'Special'    -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+	hi['@keyword.function']            = 'Keyword'    -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+	hi['@keyword.operator']            = 'Operator'   -- operators that are English words (e.g. `and` / `or`)
+	hi['@keyword.import']              = 'Include'    -- keywords for including or exporting modules (e.g. `import` in Python)
+	hi['@keyword.type']                = 'Keyword'    -- keywords describing namespaces and composite types (e.g. `struct`, `enum`)
+	hi['@keyword.modifier']            = 'Keyword'    -- keywords modifying other constructs (e.g. `const`, `static`, `public`)
+	hi['@keyword.repeat']              = 'Repeat'     -- keywords related to loops (e.g. `for` / `while`)
+	hi['@keyword.return']              = 'Statement'  -- keywords like `return` and `yield`
+	hi['@keyword.debug']               = 'Debug'      -- keywords related to debugging
+	hi['@keyword.exception']           = 'Exception'  -- keywords related to exceptions (e.g. `throw` / `catch`)
 
-	hi['@keyword.conditional']         = 'Conditional'   -- keywords related to conditionals (e.g. `if` / `else`)
-	hi['@keyword.conditional.ternary'] = 'Conditional'   -- ternary operator (e.g. `?` / `:`)
+	hi['@keyword.conditional']         = 'Conditional' -- keywords related to conditionals (e.g. `if` / `else`)
+	hi['@keyword.conditional.ternary'] = 'Conditional' -- ternary operator (e.g. `?` / `:`)
 
-	hi['@keyword.directive']           = 'Define'        -- various preprocessor directives & shebangs
-	hi['@keyword.directive.define']    = 'Define'        -- preprocessor definition directives
+	hi['@keyword.directive']           = 'Define'     -- various preprocessor directives & shebangs
+	hi['@keyword.directive.define']    = 'Define'     -- preprocessor definition directives
 
 	hi['@keyword.luadoc']              = { bold = false, nocombine = true }
 
 	-- Punctuation
-	hi['@punctuation.delimiter']       = 'Delimiter'   -- delimiters (e.g. `;` / `.` / `,`)
-	hi['@punctuation.bracket']         = 'Delimiter'   -- brackets (e.g. `()` / `{}` / `[]`)
-	hi['@punctuation.special']         = 'Special'     -- special symbols (e.g. `{}` in string interpolation)
+	hi['@punctuation.delimiter']       = 'Delimiter' -- delimiters (e.g. `;` / `.` / `,`)
+	hi['@punctuation.bracket']         = 'Delimiter' -- brackets (e.g. `()` / `{}` / `[]`)
+	hi['@punctuation.special']         = 'Special'  -- special symbols (e.g. `{}` in string interpolation)
 
 	-- Comments
-	hi['@comment']                     = 'Comment'                                                                  -- line and block comments
+	hi['@comment']                     = 'Comment'                                                               -- line and block comments
 	hi['@comment.documentation']       =
-	'Comment'                                                                                                       -- comments documenting code
+	'Comment'                                                                                                    -- comments documenting code
 
-	hi['@comment.error']               = { fg = colors.bg_0, bg = colors.red, bold = true, nocombine = true }       -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
-	hi['@comment.warning']             = { fg = colors.bg_0, bg = colors.yellow, bold = true, nocombine = true }    -- warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
-	hi['@comment.todo']                = { fg = colors.bg_0, bg = colors.magenta, bold = true, nocombine = true }   -- todo-type comments (e.g. `TODO`, `WIP`)
-	hi['@comment.note']                = { fg = colors.bg_0, bg = colors.cyan, bold = true, nocombine = true }      -- note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
+	hi['@comment.error']               = { fg = colors.bg_0, bg = colors.red, bold = true, nocombine = true }    -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
+	hi['@comment.warning']             = { fg = colors.bg_0, bg = colors.yellow, bold = true, nocombine = true } -- warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
+	hi['@comment.todo']                = { fg = colors.bg_0, bg = colors.magenta, bold = true, nocombine = true } -- todo-type comments (e.g. `TODO`, `WIP`)
+	hi['@comment.note']                = { fg = colors.bg_0, bg = colors.cyan, bold = true, nocombine = true }   -- note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
 
 	-- Diff
-	hi['@diff.plus']                   = 'Added'     -- added text (for diff files)
-	hi['@diff.minus']                  = 'Removed'   -- deleted text (for diff files)
-	hi['@diff.delta']                  = 'Changed'   -- changed text (for diff files)
+	hi['@diff.plus']                   = 'Added'  -- added text (for diff files)
+	hi['@diff.minus']                  = 'Removed' -- deleted text (for diff files)
+	hi['@diff.delta']                  = 'Changed' -- changed text (for diff files)
 
 	-- Tags
-	hi['@tag']                         = 'Tag'          -- XML-style tag names (and similar)
-	hi['@tag.builtin']                 = 'Special'      -- builtin tag names (e.g. HTML5 tags)
-	hi['@tag.attribute']               = 'Identifier'   -- XML-style tag attributes
-	hi['@tag.delimiter']               = 'Delimiter'    -- XML-style tag delimiters
+	hi['@tag']                         = 'Tag'       -- XML-style tag names (and similar)
+	hi['@tag.builtin']                 = 'Special'   -- builtin tag names (e.g. HTML5 tags)
+	hi['@tag.attribute']               = 'Identifier' -- XML-style tag attributes
+	hi['@tag.delimiter']               = 'Delimiter' -- XML-style tag delimiters
 
 	-- Markup
 	hi['@markup.raw']                  = { bg = colors.bg_15 }
@@ -385,10 +385,10 @@ local highlights = function(colors)
 	hi['@markup.underline']            = 'Underlined'
 
 	-- LSP semantic tokens
-	hi['@lsp.type.comment']            = {}                -- reset since it interferes with the `@comment` group
-	hi['@lsp.mod.defaultLibrary']      = 'Special'         -- default library symbols
-	hi['@lsp.mod.globalScope']         = { bold = true }   -- global scope symbols
-	hi['@lsp.mod.global']              = { bold = true }   -- global scope symbols
+	hi['@lsp.type.comment']            = {}             -- reset since it interferes with the `@comment` group
+	hi['@lsp.mod.defaultLibrary']      = 'Special'      -- default library symbols
+	hi['@lsp.mod.globalScope']         = { bold = true } -- global scope symbols
+	hi['@lsp.mod.global']              = { bold = true } -- global scope symbols
 
 	hi['@lsp.mod.documentation.lua']   = '@keyword.luadoc'
 
