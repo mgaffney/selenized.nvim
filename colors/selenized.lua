@@ -160,7 +160,7 @@ local highlights = function(colors)
 	hi['Character']                    = 'Constant'
 	hi['Float']                        = 'Constant'
 	hi['SpecialChar']                  = { fg = colors.violet, bg = none }
-	hi['Identifier']                   = { fg = colors.br_blue, bg = none }
+	hi['Identifier']                   = { fg = colors.fg_0, bg = none }
 	hi['Function']                     = 'Identifier'
 	hi['Statement']                    = { fg = colors.br_yellow, bg = none }
 	hi['Conditional']                  = 'Statement'
