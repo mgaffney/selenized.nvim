@@ -178,7 +178,7 @@ local highlights = function(colors)
 	hi['Typedef']                      = 'Type'
 	hi['StorageClass']                 = 'Type'
 	hi['Structure']                    = 'Type'
-	hi['Special']                      = { fg = colors.red, bg = none }
+	hi['Special']                      = { fg = colors.blue, bg = none }
 	hi['Delimiter']                    = 'Special'
 	hi['SpecialComment']               = 'Special'
 	hi['Debug']                        = 'Special'
