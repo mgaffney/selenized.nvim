@@ -121,7 +121,7 @@ local highlights = function(colors)
 	hi['Search']                       = { fg = colors.yellow, bg = none, reverse = true }
 	hi['CurSearch']                    = { fg = colors.br_yellow, bg = none, reverse = true }
 	hi['QuickFixLine']                 = 'Search'
-	hi['Visual']                       = { fg = none, bg = colors.bg_1 }
+	hi['Visual']                       = { fg = none, bg = colors.bg_2 }
 	hi['MatchParen']                   = { fg = colors.br_yellow, bg = colors.bg_2, bold = true }
 	hi['Cursor']                       = { fg = none, bg = none, reverse = true }
 	hi['lCursor']                      = 'Cursor'
