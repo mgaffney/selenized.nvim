@@ -210,7 +210,7 @@ local highlights = function(colors)
 	hi['VisualNOS']                    = { fg = none, bg = none }
 	hi['WarningMsg']                   = { fg = none, bg = none }
 	hi['WildMenu']                     = { fg = none, bg = none }
-	hi['FloatBorder']                  = { fg = colors.bg_1, bg = none }
+	hi['FloatBorder']                  = { fg = colors.fg_0, bg = none }
 	hi['NormalFloat']                  = { fg = colors.dim_0, bg = colors.bg_0 }
 	hi['FloatTitle']                   = { fg = colors.dim_0, bg = colors.bg_0 }
 	hi['WinBar']                       = { fg = colors.dim_0, bg = colors.bg_0 }
@@ -224,16 +224,27 @@ local highlights = function(colors)
 	hi['CopilotSuggestion']            = 'Suggestion'
   hi['CopilotChatHelp']              = { bg = colors.bg_15 }
 
-	-- Built-in diagnostic
+	-- Built-in diagnostic orig
 	hi['DiagnosticError']              = { fg = colors.red, bg = hi['SignColumn'].bg }
-	hi['DiagnosticHint']               = { fg = colors.yellow, bg = hi['SignColumn'].bg }
+	hi['DiagnosticWarn']               = { fg = colors.yellow, bg = hi['SignColumn'].bg }
+	hi['DiagnosticHint']               = { fg = colors.blue, bg = hi['SignColumn'].bg }
 	hi['DiagnosticInfo']               = { fg = colors.cyan, bg = hi['SignColumn'].bg }
-	hi['DiagnosticWarn']               = { fg = colors.cyan, bg = hi['SignColumn'].bg }
 
 	hi['DiagnosticUnderlineError']     = { underline = true, sp = hi['DiagnosticError'].fg }
-	hi['DiagnosticUnderlineHint']      = { underline = true, sp = hi['DiagnosticWarn'].fg }
+	hi['DiagnosticUnderlineWarn']      = { underline = true, sp = hi['DiagnosticWarn'].fg }
+	hi['DiagnosticUnderlineHint']      = { underline = true, sp = hi['DiagnosticHint'].fg }
 	hi['DiagnosticUnderlineInfo']      = { underline = true, sp = hi['DiagnosticInfo'].fg }
-	hi['DiagnosticUnderlineWarn']      = { underline = true, sp = hi['DiagnosticHint'].fg }
+
+	-- Built-in diagnostic orig
+	-- hi['DiagnosticError']              = { fg = colors.red, bg = hi['SignColumn'].bg }
+	-- hi['DiagnosticHint']               = { fg = colors.yellow, bg = hi['SignColumn'].bg }
+	-- hi['DiagnosticInfo']               = { fg = colors.cyan, bg = hi['SignColumn'].bg }
+	-- hi['DiagnosticWarn']               = { fg = colors.cyan, bg = hi['SignColumn'].bg }
+
+	-- hi['DiagnosticUnderlineError']     = { underline = true, sp = hi['DiagnosticError'].fg }
+	-- hi['DiagnosticUnderlineHint']      = { underline = true, sp = hi['DiagnosticWarn'].fg }
+	-- hi['DiagnosticUnderlineInfo']      = { underline = true, sp = hi['DiagnosticInfo'].fg }
+	-- hi['DiagnosticUnderlineWarn']      = { underline = true, sp = hi['DiagnosticHint'].fg }
 
 	-- Built-in LSP
 	hi['LspReferenceText']             = { bg = colors.bg_1 }
