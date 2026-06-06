@@ -145,10 +145,11 @@ local highlights = function(colors)
 	hi['PmenuSel']                     = { fg = none, bg = colors.bg_2 }
 	hi['PmenuThumb']                   = { fg = none, bg = colors.dim_0 }
 	hi['PmenuSbar']                    = { fg = none, bg = colors.bg_2 }
-	hi['DiffAdd']                      = { fg = colors.green, bg = colors.bg_1 }
-	hi['DiffChange']                   = { fg = none, bg = colors.bg_1 }
+	hi['DiffAdd']                      = { bg = colors.bg_1 }
+	hi['DiffChange']                   = { bg = colors.bg_1 }
 	hi['DiffDelete']                   = { fg = colors.red, bg = colors.bg_1 }
-	hi['DiffText']                     = { fg = colors.bg_1, bg = colors.yellow }
+	hi['DiffText']                     = { bg = colors.bg_1, bold = true }
+	hi['DiffTextAdd']                  = { fg = colors.br_green, bg = colors.bg_1 }
 	hi['Added']                        = { fg = colors.br_green }
 	hi['Changed']                      = { fg = colors.br_blue }
 	hi['Removed']                      = { fg = colors.br_red }
