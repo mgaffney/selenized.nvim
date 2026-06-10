@@ -141,7 +141,7 @@ local highlights = function(colors)
 	hi['TabLineFill']                  = { fg = colors.dim_0, bg = none, reverse = true }
 	hi['ToolbarButton']                = { fg = none, bg = none, reverse = true }
 	hi['ToolbarLine']                  = { fg = none, bg = colors.bg_2 }
-	hi['Pmenu']                        = { fg = colors.dim_0, bg = colors.bg_1 }
+	hi['Pmenu']                        = { fg = colors.fg_0, bg = colors.bg_1 }
 	hi['PmenuSel']                     = { fg = none, bg = colors.bg_2 }
 	hi['PmenuThumb']                   = { fg = none, bg = colors.dim_0 }
 	hi['PmenuSbar']                    = { fg = none, bg = colors.bg_2 }
@@ -211,9 +211,9 @@ local highlights = function(colors)
 	hi['VisualNOS']                    = { fg = none, bg = none }
 	hi['WarningMsg']                   = { fg = none, bg = none }
 	hi['WildMenu']                     = { fg = none, bg = none }
-	hi['FloatBorder']                  = { fg = colors.fg_0, bg = none }
-	hi['NormalFloat']                  = { fg = colors.dim_0, bg = colors.bg_0 }
-	hi['FloatTitle']                   = { fg = colors.dim_0, bg = colors.bg_0 }
+	hi['FloatBorder']                  = { fg = colors.dim_0, bg = colors.bg_1 }
+	hi['NormalFloat']                  = { fg = colors.fg_0, bg = colors.bg_1 }
+	hi['FloatTitle']                   = { fg = colors.fg_1, bg = colors.bg_1, bold = true }
 	hi['WinBar']                       = { fg = colors.dim_0, bg = colors.bg_0 }
 
 	hi['Suggestion']                   = { fg = colors.dim_1, bg = none, italic = true }
