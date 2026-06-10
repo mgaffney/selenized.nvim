@@ -2,7 +2,7 @@ local colors = selenized.colors
 return {
     normal = {
         a = { fg = colors.bg_1, bg = colors.blue },
-        b = { fg = colors.cyan, bg = colors.bg_2 },
+        b = { fg = colors.fg_0, bg = colors.bg_2 },
         c = { fg = colors.dim_0, bg = colors.bg_1 },
     },
     insert = { a = { fg = colors.bg_1, bg = colors.green } },
