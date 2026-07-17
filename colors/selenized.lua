@@ -254,6 +254,8 @@ local highlights = function(colors)
 
 	hi['LspInfoBorder']                = 'FloatBorder'
 
+	hi['LspInlayHint']                 = { fg = colors.dim_0, bg = none, italic = true }
+
 	-- nvim-cmp highlight groups
 	hi['CmpItemKindClass']             = 'Type'
 	hi['CmpItemKindColor']             = 'Special'
